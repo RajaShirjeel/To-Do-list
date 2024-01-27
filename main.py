@@ -5,12 +5,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 import secrets
 from datetime import datetime
+import os
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret-key-goes-here'
 secret_key = secrets.token_hex(16)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get("DB_URI", "sqlite:///tasks.db")
 db = SQLAlchemy()
 db.init_app(app)
 
@@ -182,4 +183,4 @@ def retrive_task():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
