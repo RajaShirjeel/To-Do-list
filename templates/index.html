@@ -1,0 +1,46 @@
+{% include "header.html" %}
+<body class="d-flex flex-column min-vh-100">
+    {% if current_user.is_authenticated %}
+        <h1 class="me-3">{{user.name}}'s To Do List</h1>
+    {% endif %}
+    <div class="container flex-grow-1"> 
+        <form action="/completed_tasks" method="post">
+            {% if current_user.is_authenticated %}
+                {% if user.tasks %}
+                    <ul class="custom-task-list">
+                        {% for task in user.tasks %}
+                            <li class="custom-task-item">
+                                <label class="task-details">
+                                    <input type="checkbox" name="completed" value="{{task.id}}"> {{ task.task_name }} - Due Date - {% if date > task.task_due %} <span style="color: red;">{{ task.task_due }}</span> {% else %} <span style="color: green;">{{ task.task_due}}</span> {% endif %}
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <div class="no-tasks-container">
+                        <p>No Tasks yet</p>
+                    </div>
+                {% endif %}
+
+                <a href="{{ url_for('add_task') }}" class="add-task-button">
+                    <button type="button" class="btn btn-primary me-2">Add Task</button>
+                </a>
+            {% else %}
+                <p class="me">You need to be Logged in to Add tasks</p>
+            {% endif %}
+        </div>
+        {% if current_user.is_authenticated %}
+            <div class="submit-task-btn">
+                <button type="submit" class="btn btn-outline-primary">Submit Tasks</button>
+            </div>
+        {% endif %}
+        </form>
+    <!-- Bootstrap JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% include "footer.html" %}
+
+</body>
+</html>

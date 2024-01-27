@@ -1,0 +1,27 @@
+{% include "header.html" %}
+<body class="d-flex flex-column min-vh-100">
+    <div class="container flex-grow-1"> 
+        {% if user.completed_tasks %}
+            <ul class="custom-task-list">
+                {% for task in user.completed_tasks %}
+                    <li class="custom-task-item">
+                        <form action="/retrive_task" method="post">
+                            <input type="hidden" name="task_id" value="{{task.id}}">
+                            <label class="task-details">
+                                {{task.completed_task_name}} - Due Date - {{task.completed_task_due}}  <button type="submit" class="btn btn-outline-primary me-2" id="incom-btn">Mark Incomplete</button>
+                            </label>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="no-tasks-container">
+                <p>No Tasks Completed yet</p>
+            </div>
+        {% endif %}
+
+
+    </div>
+    {% include "footer.html" %}
+</body>
+</html>

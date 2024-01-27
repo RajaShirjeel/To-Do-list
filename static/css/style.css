@@ -1,0 +1,171 @@
+/* form-css */
+.task-form-heading{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.task-form-container {
+    max-width: 400px;
+    margin: auto;
+}
+.task-form-label {
+    display: block;
+    margin-bottom: 8px;
+}
+.task-form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+.task-form-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* displaying-tasks */
+
+
+.custom-task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.custom-task-item {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-details {
+    margin-right: 10px;
+}
+
+.no-tasks-container {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.add-task-button {
+    margin-top: 10px;
+}
+
+/* form-css */
+
+.container-the-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.signin-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    margin-top: 60px; /* Adjust as needed */
+}
+
+.signin-container h2 {
+    color: #333333;
+}
+
+.signin-form-group {
+    margin-bottom: 20px;
+}
+
+.signin-form-group label {
+    display: block;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.signin-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.signin-form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signin-form-group button:hover {
+    background-color: #007BFF;
+}
+
+.custom-btn {
+    text-decoration: none; /* Remove underline for links */
+}
+
+.flashee{
+    color: red;
+}
+
+.me {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* about-me */
+
+.custom-container {
+    margin-top: 50px;
+}
+
+.custom-profile-img {
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+.custom-about-me-text {
+    margin-top: 20px;
+}
+
+.comment-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+/* index */
+
+.submit-task-btn{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+#incom-btn{
+    font-size: 13px;
+}
+
+.me-3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}

@@ -1,0 +1,16 @@
+{% include "header.html" %}
+<body class="d-flex flex-column min-vh-100">
+    <h2 class="task-form-heading">Create a New Task</h2>
+
+    <form class="task-form-container" action="/add_task" method="post">
+        <label class="task-form-label" for="task_name">Task Name:</label>
+        <input class="task-form-input" type="text" id="task_name" name="task_name" required>
+
+        <label class="task-form-label" for="task_due_date">Task Due Date:</label>
+        <input class="task-form-input" type="date" id="task_due_date" name="task_due_date" required>
+
+        <button class="task-form-button" type="submit">Submit Task</button>
+    </form>
+
+</body>
+{% include "footer.html" %}
